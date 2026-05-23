@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Components · Dad's Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site/styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="cmp-page">
+
+<div class="cmp-shell">
+
+  <aside class="cmp-toc">
+    <p class="label">Dad's Club</p>
+    <h1>Component Library</h1>
+
+    <nav>
+      <ul>
+        <li>
+          <span>Foundations</span>
+          <a href="#color">Color</a>
+          <a href="#type">Type scale</a>
+          <a href="#spacing">Spacing</a>
+        </li>
+        <li>
+          <span>Atoms</span>
+          <a href="#cta">CTA link</a>
+          <a href="#caption">Caption</a>
+        </li>
+        <li>
+          <span>Patterns</span>
+          <a href="#nav">Nav</a>
+          <a href="#footer">Footer</a>
+        </li>
+        <li>
+          <span>Sections</span>
+          <a href="#hero">Hero</a>
+          <a href="#indent">Indent body block</a>
+          <a href="#next-gathering">Next Gathering</a>
+          <a href="#practice">In Practice grid</a>
+          <a href="#ig">Instagram tiles</a>
+          <a href="#newsletter">Newsletter</a>
+          <a href="#event-row">Event list row</a>
+          <a href="#past-grid">Past gatherings grid</a>
+          <a href="#event-meta">Event meta row</a>
+          <a href="#sticky-rsvp">Sticky RSVP bar</a>
+          <a href="#contact-form">Contact form</a>
+          <a href="#founder">Founder placeholder</a>
+        </li>
+        <li>
+          <span>Page templates</span>
+          <a href="#templates">All pages</a>
+        </li>
+      </ul>
+      <a href="../site/index.html" class="return">← Back to live site</a>
+    </nav>
+  </aside>
+
+  <main class="cmp-main">
+
+    <div class="cmp-intro">
+      <h2>Components & templates</h2>
+      <p>Every section that builds the Dad's Club site, abstracted from its page context. Each block is defined once as an HTML <code>&lt;template&gt;</code> and rendered here as both a live preview (using the production stylesheet) and its source markup.</p>
+      <p>Pair with <code>visual-direction.md</code> for tokens, and <code>*-wireframe.md</code> for composition rules per page.</p>
+    </div>
+
+    <!-- ============ FOUNDATIONS ============ -->
+    <section class="cmp-section" id="foundations">
+      <h2>Foundations</h2>
+
+      <div class="cmp-item" id="color">
+        <header>
+          <h3>Color</h3>
+          <p class="desc">Restrained palette. One ink, one paper, one warm accent — used sparingly. No color blocks behind content.</p>
+        </header>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#F6F2EA"></div><dl><dt>Paper</dt><dd>#F6F2EA · background</dd></dl></div>
+          <div class="swatch"><div class="chip" style="background:#1B1714"></div><dl><dt>Ink</dt><dd>#1B1714 · text</dd></dl></div>
+          <div class="swatch"><div class="chip" style="background:#A24E2B"></div><dl><dt>Accent</dt><dd>#A24E2B · hover, &lt;3% of view</dd></dl></div>
+          <div class="swatch"><div class="chip" style="background:#D9CFBE"></div><dl><dt>Rule</dt><dd>#D9CFBE · dividers, borders</dd></dl></div>
+          <div class="swatch"><div class="chip" style="background:#6B6258"></div><dl><dt>Muted ink</dt><dd>#6B6258 · captions, meta</dd></dl></div>
+        </div>
+      </div>
+
+      <div class="cmp-item" id="type">
+        <header>
+          <h3>Type scale</h3>
+          <p class="desc">Source Serif 4 + Inter. Serif does the work; sans does the labels. Mobile sizes shown — desktop scales up at ≥1025px (see <code>styles.css</code>).</p>
+        </header>
+        <div class="typescale">
+          <div><span class="name">Display</span><span class="display">Display 40/64</span></div>
+          <div><span class="name">H1</span><h1 style="margin:0;">Heading 1 · 30/44</h1></div>
+          <div><span class="name">H2</span><h2 style="margin:0;">Heading 2 · 24/32</h2></div>
+          <div><span class="name">H3</span><h3 style="margin:0;">Heading 3 · 19/22</h3></div>
+          <div><span class="name">Body L</span><p class="body-l" style="margin:0;">Long-form body · 18/20. Used in About copy, event descriptions, hero body.</p></div>
+          <div><span class="name">Body</span><p class="body" style="margin:0;">Default body · 16/17. Used everywhere not marked otherwise.</p></div>
+          <div><span class="name">Caption</span><p class="caption" style="margin:0;">Caption · 12/13 sans, used under photos and as metadata</p></div>
+        </div>
+      </div>
+
+      <div class="cmp-item" id="spacing">
+        <header>
+          <h3>Spacing tokens</h3>
+          <p class="desc">Section padding scales by breakpoint. Hairline rule (1px Rule color) separates sections — no background changes.</p>
+        </header>
+        <div class="spacing-stack">
+          <div><span>S ≤ 640</span><div class="bar" style="width: 64px;"></div><span>64px section padding</span></div>
+          <div><span>M 641–1024</span><div class="bar" style="width: 88px;"></div><span>88px</span></div>
+          <div><span>L ≥ 1025</span><div class="bar" style="width: 120px;"></div><span>120px</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ATOMS ============ -->
+    <section class="cmp-section" id="atoms">
+      <h2>Atoms</h2>
+
+      <div class="cmp-item" id="cta">
+        <header>
+          <h3>CTA link</h3>
+          <p class="desc">Typographic CTA with thin underline and caret. No filled buttons anywhere in the system. Hover shifts to accent + nudges caret 3px right.</p>
+        </header>
+        <div class="cmp-preview">
+          <template id="t-cta"><a class="cta" href="#">Join Dad's Club <span class="caret">→</span></a></template>
+          <div data-render="t-cta"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-cta"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="caption">
+        <header>
+          <h3>Caption</h3>
+          <p class="desc">12–13px sans in muted ink. Sits under every editorial photo. Captions are a feature, not an afterthought.</p>
+        </header>
+        <div class="cmp-preview">
+          <template id="t-caption"><p class="caption">Verplanck waterfront · summer gathering, 2025</p></template>
+          <div data-render="t-caption"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-caption"></pre></details>
+      </div>
+    </section>
+
+    <!-- ============ PATTERNS ============ -->
+    <section class="cmp-section" id="patterns">
+      <h2>Patterns</h2>
+
+      <div class="cmp-item" id="nav">
+        <header>
+          <h3>Nav</h3>
+          <p class="desc">Wordmark left, links + Join CTA right at desktop. At mobile, links collapse to a hamburger drawer; the Join CTA stays visible outside the menu.</p>
+        </header>
+        <p class="cmp-preview-label">Preview · resize the page to see mobile state</p>
+        <div class="cmp-preview flush">
+          <template id="t-nav"><nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="wordmark">Dad's Club</a>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a class="nav-join" href="#">Join Dad's Club <span class="caret">→</span></a></li>
+    </ul>
+    <div class="nav-mobile-actions">
+      <a class="nav-join" href="#" style="display:inline-flex;">Join <span class="caret">→</span></a>
+      <button class="nav-hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav></template>
+          <div data-render="t-nav"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-nav"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="footer">
+        <header>
+          <h3>Footer</h3>
+          <p class="desc">Wordmark, three columns (Contact / Connect / Site), bottom row with copyright + mascot. Mascot's only home on the site.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-footer"><footer class="footer">
+  <div class="container">
+    <a href="#" class="wordmark">Dad's Club</a>
+    <div class="footer-cols">
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="mailto:aladds@officialdadsclub.com">aladds@officialdadsclub.com</a></li></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Email</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Join</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dad's Club</span>
+      <img src="../images/beaver-mascot-vibrant.png" alt="" class="footer-mascot">
+    </div>
+  </div>
+</footer></template>
+          <div data-render="t-footer"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-footer"></pre></details>
+      </div>
+    </section>
+
+    <!-- ============ SECTIONS ============ -->
+    <section class="cmp-section" id="sections">
+      <h2>Sections</h2>
+
+      <div class="cmp-item" id="hero">
+        <header>
+          <h3>Hero</h3>
+          <p class="desc">Asymmetric: eyebrow + headline left (cols 1–5), photo right (cols 6–12). Stacks at mobile with photo above headline. No CTA in the hero — nav handles Join.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-hero"><section class="section">
+  <div class="container">
+    <div class="grid hero-grid">
+      <div class="hero-text">
+        <h1 class="display">Dad's Club exists to build belonging, community, and brotherhood among Dads.</h1>
+      </div>
+      <figure class="hero-photo-wrap">
+        <img src="../images/sunset-dock-gathering.jpeg" alt="Group of dads gathered at sunset along the waterfront.">
+        <figcaption class="caption">Verplanck waterfront · summer gathering, 2025</figcaption>
+      </figure>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-hero"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-hero"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="indent">
+        <header>
+          <h3>Indent body block</h3>
+          <p class="desc">The workhorse layout: heading + body + CTA, indented to cols 2–8. Used anywhere long-form copy lives. Add an eyebrow above only when the section needs a label its heading + body don't already provide (e.g. "Next Gathering", "Past Gatherings") — most body blocks don't.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-indent"><section class="section">
+  <div class="container">
+    <div class="grid">
+      <div class="indent">
+        <h2>Built by Dads, for Dads.</h2>
+        <p class="body-l">We realized that many dads are carrying a lot, often quietly, and not always with the community they deserve. We wanted to change that.</p>
+        <a class="cta" href="#">Read the full story <span class="caret">→</span></a>
+      </div>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-indent"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-indent"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="next-gathering">
+        <header>
+          <h3>Next Gathering</h3>
+          <p class="desc">Single-event block. Heading + hairline + date · time · location + two CTAs. Used on the home page; off-season state swaps the body for a "Join the list" line (see <code>home-wireframe.md</code>).</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-next"><section class="section">
+  <div class="container">
+    <div class="grid">
+      <div class="indent event-block">
+        <h2>Dad's Club Gathering</h2>
+        <hr class="event-rule">
+        <p class="event-meta">Thu, May 14, 2026<span class="dot">·</span>7:30 PM<span class="dot">·</span>Location TBD</p>
+        <div class="event-ctas">
+          <a class="cta" href="#">RSVP <span class="caret">→</span></a>
+          <a class="cta cta-sm" href="#">See all events <span class="caret">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-next"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-next"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="practice">
+        <header>
+          <h3>In Practice grid</h3>
+          <p class="desc">Asymmetric photo grid: one large (7 cols) + two stacked smaller (4 cols). Editorial choice — resist a tidy 3-up.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-practice"><section class="section">
+  <div class="container">
+    <div class="grid">
+      <div class="indent">
+        <p class="body-l">A Dads Club event is a relaxed, welcoming gathering where fathers connect, share experiences, and build community.</p>
+      </div>
+    </div>
+    <div class="practice-photos">
+      <figure>
+        <img src="../images/pickleball-team-group.jpeg" alt="">
+        <figcaption class="caption">Pickleball night · Spring 2026</figcaption>
+      </figure>
+      <div class="col-b">
+        <figure>
+          <img src="../images/dad-daughter-pumpkin-festival.jpeg" alt="">
+          <figcaption class="caption">Family festival</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/guy-laughing-string-lights.jpeg" alt="">
+          <figcaption class="caption">Indoor gathering</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-practice"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-practice"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="ig">
+        <header>
+          <h3>Instagram tiles</h3>
+          <p class="desc">6 most-recent thumbnails. 2-up at S, 3-up at M, 6-up at L. 1px Rule hairline border per tile. Hides itself if the embed fails — never shows broken state.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-ig"><section class="section">
+  <div class="container">
+    <div class="ig-head">
+      <h2>On Instagram</h2>
+      <a class="cta cta-sm" href="#">@officialdadsclub <span class="caret">→</span></a>
+    </div>
+    <div class="ig-tiles">
+      <a href="#"><img src="../images/sunset-dock-gathering.jpeg" alt=""></a>
+      <a href="#"><img src="../images/pickleball-team-group.jpeg" alt=""></a>
+      <a href="#"><img src="../images/dad-daughter-pumpkin-festival.jpeg" alt=""></a>
+      <a href="#"><img src="../images/guy-laughing-string-lights.jpeg" alt=""></a>
+      <a href="#"><img src="../images/dads-club-meeting-banner.jpg" alt=""></a>
+      <a href="#"><img src="../images/two-dads-park-bench.jpg" alt=""></a>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-ig"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-ig"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="newsletter">
+        <header>
+          <h3>Newsletter</h3>
+          <p class="desc">Separate from Join (Google Form). This is the on-domain passive-interest list. Inline at M/L, stacked at S. Replaces with italic "Thanks for submitting!" on submit.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-newsletter"><section class="section newsletter">
+  <div class="container">
+    <div class="grid">
+      <div class="indent">
+        <h3>Stay close to the table.</h3>
+        <p class="body-l">Get word of upcoming gatherings and notes from the table.</p>
+        <form>
+          <input type="email" placeholder="your email" aria-label="Email address">
+          <button type="submit">Sign Up <span class="caret">→</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-newsletter"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-newsletter"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="event-row">
+        <header>
+          <h3>Event list row</h3>
+          <p class="desc">One row per event (recurring series expand into individual rows). Hairline rules between. Whole row is clickable to the detail page; RSVP link is the explicit primary action.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-row"><ul class="event-list" style="margin: 0;">
+  <li class="event-row">
+    <div class="meta-stack">
+      <h3 style="margin: 0 0 4px;">Dad's Club Gathering</h3>
+      <p class="meta">Thu, May 14, 2026 · 7:30 PM · Location TBD</p>
+    </div>
+    <a class="cta rsvp" href="#">RSVP <span class="caret">→</span></a>
+  </li>
+  <li class="event-row">
+    <div class="meta-stack">
+      <h3 style="margin: 0 0 4px;">1st Annual Backyard Pop Up: Halloween Edition</h3>
+      <p class="meta">Thu, Oct 30, 2025 · 8:00 PM · Verplanck</p>
+    </div>
+    <a class="cta rsvp" href="#">RSVP <span class="caret">→</span></a>
+  </li>
+</ul></template>
+          <div data-render="t-row"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-row"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="past-grid">
+        <header>
+          <h3>Past gatherings grid</h3>
+          <p class="desc">2-up at S, 3-up at M/L. Tiles link to detail pages or open as lightbox if photo-only.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-past"><section class="section">
+  <div class="container">
+    <div class="grid">
+      <div class="indent"><h2>Past Gatherings</h2></div>
+    </div>
+    <div class="past-grid">
+      <figure>
+        <img src="../images/dad-daughter-pumpkin-festival.jpeg" alt="">
+        <figcaption class="caption">Pumpkin Festival · Fall 2025</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/sunset-dock-gathering.jpeg" alt="">
+        <figcaption class="caption">Summer at the Dock · Aug 2025</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/pickleball-team-group.jpeg" alt="">
+        <figcaption class="caption">Pickleball Night · Spring 2026</figcaption>
+      </figure>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-past"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-past"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="event-meta">
+        <header>
+          <h3>Event meta row</h3>
+          <p class="desc">Date / Time / Location laid out as a definition list. Three columns at M+, stacks at S.</p>
+        </header>
+        <div class="cmp-preview">
+          <template id="t-meta"><dl class="meta-row">
+  <div><dt>Date</dt><dd>Thu, May 14, 2026</dd></div>
+  <div><dt>Time</dt><dd>7:30 PM</dd></div>
+  <div><dt>Location</dt><dd>TBD</dd></div>
+</dl></template>
+          <div data-render="t-meta"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-meta"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="sticky-rsvp">
+        <header>
+          <h3>Sticky RSVP bar</h3>
+          <p class="desc">Mobile-only on the event detail page. Appears when the inline RSVP scrolls out of view. The one place the design breaks "no chrome" — RSVP is this page's whole purpose.</p>
+        </header>
+        <div class="cmp-preview" style="position: relative;">
+          <template id="t-sticky"><div class="sticky-rsvp show" style="position: static;">
+  <div class="inner">
+    <span class="date">Thu, May 14 · 7:30 PM</span>
+    <a class="cta" href="#">RSVP <span class="caret">→</span></a>
+  </div>
+</div></template>
+          <div data-render="t-sticky"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-sticky"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="contact-form">
+        <header>
+          <h3>Contact form</h3>
+          <p class="desc">First/Last name side-by-side at M+, stacked at S. Email + Message always full-width. Labels above fields (not floating). Hairline borders, no fills.</p>
+        </header>
+        <div class="cmp-preview flush">
+          <template id="t-contact"><section class="section" style="border-bottom: 0;">
+  <div class="container">
+    <div class="grid">
+      <div class="indent">
+        <form class="contact-form">
+          <div class="name-row">
+            <div class="field">
+              <label for="cmp-first">First name</label>
+              <input id="cmp-first" type="text">
+            </div>
+            <div class="field">
+              <label for="cmp-last">Last name</label>
+              <input id="cmp-last" type="text">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cmp-email">Email</label>
+            <input id="cmp-email" type="email">
+          </div>
+          <div class="field">
+            <label for="cmp-msg">Message</label>
+            <textarea id="cmp-msg" rows="4"></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit">Send <span class="caret">→</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section></template>
+          <div data-render="t-contact"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-contact"></pre></details>
+      </div>
+
+      <div class="cmp-item" id="founder">
+        <header>
+          <h3>Founder placeholder</h3>
+          <p class="desc">Used on /about until real founder portraits arrive. Borderline-empty frame with explanatory caption — better than ghost image boxes.</p>
+        </header>
+        <div class="cmp-preview">
+          <template id="t-founder"><div class="founder" style="max-width: 320px;">
+  <div class="founder-placeholder">
+    <p class="caption">Founder portrait forthcoming</p>
+  </div>
+  <figcaption class="caption" style="margin-top:14px;">Co-founder · bio coming soon</figcaption>
+</div></template>
+          <div data-render="t-founder"></div>
+        </div>
+        <details class="cmp-source"><summary>Markup</summary><pre data-source-of="t-founder"></pre></details>
+      </div>
+    </section>
+
+    <!-- ============ TEMPLATES ============ -->
+    <section class="cmp-section" id="templates">
+      <h2>Page templates</h2>
+      <div class="cmp-item">
+        <header>
+          <h3>Compositions</h3>
+          <p class="desc">Pages are compositions of the sections above. Open each live page to see how the blocks stack and which ones each page uses.</p>
+        </header>
+        <div class="tpl-list">
+          <a href="../site/index.html"><span>Home</span><span>Hero · The Why · Next Gathering · In Practice · IG · Newsletter</span></a>
+          <a href="../site/about.html"><span>About</span><span>Story hero · Founding · Founders · In Practice · Closing CTA</span></a>
+          <a href="../site/events.html"><span>Events</span><span>Heading · Intro photo · Event rows · Past gatherings</span></a>
+          <a href="../site/events/dads-club-gathering.html"><span>Event detail</span><span>Back · Header · Hero · Meta row · Description · Next up · Sticky RSVP (mobile)</span></a>
+          <a href="../site/contact.html"><span>Contact</span><span>Get in touch · Form · Or reach us directly</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Render previews and source code from each <template>.
+  document.querySelectorAll('[data-render]').forEach(host => {
+    const tpl = document.getElementById(host.dataset.render);
+    if (!tpl) return;
+    host.appendChild(tpl.content.cloneNode(true));
+  });
+  document.querySelectorAll('[data-source-of]').forEach(host => {
+    const tpl = document.getElementById(host.dataset.sourceOf);
+    if (!tpl) return;
+    // innerHTML on a <template> returns the markup inside it as a string
+    host.textContent = tpl.innerHTML.trim();
+  });
+</script>
+
+</body>
+</html>

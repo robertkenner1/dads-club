@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Dad's Club</title>
+<meta name="description" content="Get in touch with Dad's Club.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="wordmark">Dad's Club</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="nav-join" href="https://docs.google.com/forms/d/e/1FAIpQLSdwMKBxsm6Ex0XVa8YoM80DfnsurNDLMAZYFRGghX_SPp39dw/viewform" target="_blank" rel="noopener noreferrer">Join Dad's Club <span class="caret">→</span></a></li>
+    </ul>
+    <div class="nav-mobile-actions">
+      <a class="nav-join" href="https://docs.google.com/forms/d/e/1FAIpQLSdwMKBxsm6Ex0XVa8YoM80DfnsurNDLMAZYFRGghX_SPp39dw/viewform" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">Join <span class="caret">→</span></a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" id="navToggle">☰</button>
+    </div>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- Get in touch -->
+  <section class="section contact-intro">
+    <div class="container">
+      <div class="grid">
+        <div class="indent">
+          <h1 style="margin-bottom: 16px;">Get in touch</h1>
+          <p class="body-l">Questions, ideas, or want to host a gathering? Drop a line.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+        <div class="indent">
+          <form class="contact-form" id="contactForm">
+            <div class="name-row">
+              <div class="field">
+                <label for="first">First name</label>
+                <input id="first" name="first" type="text" required>
+              </div>
+              <div class="field">
+                <label for="last">Last name</label>
+                <input id="last" name="last" type="text" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <div class="submit-row">
+              <button type="submit">Send <span class="caret">→</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reach us directly -->
+  <section class="section reach-direct no-border-bottom">
+    <div class="container">
+      <div class="grid">
+        <div class="indent">
+          <h2>Or reach us directly</h2>
+          <dl>
+            <dt>Email</dt>
+            <dd><a href="mailto:aladds@officialdadsclub.com">aladds@officialdadsclub.com</a></dd>
+            <dt>Instagram</dt>
+            <dd><a href="https://www.instagram.com/officialdadsclub/" target="_blank" rel="noopener noreferrer">@officialdadsclub →</a></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <a href="index.html" class="wordmark">Dad's Club</a>
+    <div class="footer-cols">
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:aladds@officialdadsclub.com">aladds@officialdadsclub.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/officialdadsclub/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="mailto:aladds@officialdadsclub.com">Email</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdwMKBxsm6Ex0XVa8YoM80DfnsurNDLMAZYFRGghX_SPp39dw/viewform" target="_blank" rel="noopener noreferrer">Join</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dad's Club</span>
+      <img src="../images/beaver-mascot-vibrant.png" alt="" class="footer-mascot" aria-hidden="true">
+    </div>
+  </div>
+</footer>
+
+<script>
+  const t = document.getElementById('navToggle');
+  const d = document.getElementById('navDrawer');
+  if (t && d) {
+    t.addEventListener('click', () => {
+      const open = d.classList.toggle('open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  const cf = document.getElementById('contactForm');
+  if (cf) {
+    cf.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const msg = document.createElement('p');
+      msg.className = 'body-l';
+      msg.style.fontStyle = 'italic';
+      msg.textContent = "Thanks. We'll be in touch.";
+      cf.replaceWith(msg);
+    });
+  }
+</script>
+
+</body>
+</html>
