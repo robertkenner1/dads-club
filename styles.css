@@ -166,7 +166,7 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
   font-size: 17px;
   font-weight: 400;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--accent);
   padding: 14px 28px;
   border: 0;
   border-bottom: 0;
@@ -174,7 +174,7 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
   transition: background 160ms ease, color 160ms ease;
 }
 .nav-join:hover {
-  background: var(--accent);
+  background: var(--ink);
   color: var(--paper);
   border-bottom: 0;
 }
@@ -429,13 +429,13 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
   font-size: 19px;
   font-weight: 400;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--accent);
   padding: 22px 36px;
   border: 0;
   border-radius: 8px;
   transition: background 160ms ease, color 160ms ease;
 }
-.mission-join:hover { background: var(--accent); color: var(--paper); }
+.mission-join:hover { background: var(--ink); color: var(--paper); }
 /* (mission row no longer has connecting hairline since pillars are now their own section) */
 @media (min-width: 641px) {
   .mission-row { padding-bottom: 64px; }
@@ -596,7 +596,7 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
   font-size: 17px;
   font-weight: 400;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--accent);
   padding: 14px 28px;
   border: 0;
   border-bottom: 0;
@@ -604,7 +604,7 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
   transition: background 160ms ease, color 160ms ease;
 }
 .join-cta-section .cta-big:hover {
-  background: var(--accent);
+  background: var(--ink);
   color: var(--paper);
   border-bottom: 0;
 }
@@ -783,7 +783,7 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
   font-family: var(--sans);
   font-size: 17px;
   font-weight: 400;
-  background: var(--ink);
+  background: var(--accent);
   color: var(--paper);
   padding: 14px 28px;
   border: 0;
@@ -791,7 +791,7 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
   border-radius: 8px;
   transition: background 160ms ease, color 160ms ease;
 }
-.event-row .rsvp:hover { background: var(--accent); color: var(--paper); border-bottom: 0; }
+.event-row .rsvp:hover { background: var(--ink); color: var(--paper); border-bottom: 0; }
 @media (min-width: 1025px) {
   .event-row { grid-template-columns: 1fr auto; align-items: center; column-gap: 48px; padding: 32px 0; }
   .event-row .meta-stack { grid-column: 1; }
