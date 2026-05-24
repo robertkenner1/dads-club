@@ -125,16 +125,31 @@ h3, .h3 { font-family: var(--sans); font-size: 19px; line-height: 1.35; font-wei
 }
 .wordmark {
   font-family: var(--display-serif);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: var(--ink);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   line-height: 1;
+  height: 48px;
 }
-@media (min-width: 1025px) { .wordmark { font-size: 28px; } }
+@media (min-width: 1025px) { .wordmark { font-size: 34px; } }
+.wordmark-mark {
+  height: 48px;
+  width: 48px;
+  display: block;
+  filter: none;
+  flex-shrink: 0;
+}
+.wordmark-text {
+  display: inline-block;
+  line-height: 1;
+  font-size: inherit;
+  height: 22px;
+}
+@media (min-width: 1025px) { .wordmark-text { height: 25px; } }
 .wordmark-icon {
   font-size: 1.3em;
   line-height: 1;
